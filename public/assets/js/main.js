@@ -12,7 +12,7 @@ const SERVICE_GROUPS = {
   "landscaping-pools": "Landscaping and Pools",
   "cleaning-insulation": "Cleaning and Insulation"
 };
-const CONTACT_EMAIL = "info@adamcivilcontractingt.ae";
+const CONTACT_EMAIL = "info@adamcivilcontracting.ae";
 
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
