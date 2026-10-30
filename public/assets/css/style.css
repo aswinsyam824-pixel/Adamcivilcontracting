@@ -221,7 +221,7 @@ main>.section:last-child{padding-bottom:0}
 .focus .h2 .soft{color:#9EA2A8}
 .focus__head{display:grid;grid-template-columns:1fr 2.4fr;gap:clamp(24px,4vw,64px);align-items:start}
 .focus__head .lead{color:rgba(255,255,255,.75);margin-top:18px}
-.focus__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,20px);margin-top:clamp(28px,4vw,44px)}
+.focus__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,20px);margin-top:clamp(28px,4vw,44px)}
 .fcase{position:relative;display:flex;flex-direction:column;background:#26282C;border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;transition:transform .3s,border-color .3s}
 .fcase:hover{transform:translateY(-4px);border-color:rgba(215,79,68,.6)}
 .fcase .frame{aspect-ratio:16/9;overflow:hidden}
@@ -676,8 +676,6 @@ html.lenis,html.lenis body{height:auto}
   .sub{grid-template-columns:1fr}
   .sub .frame{max-width:420px}
   .focus__grid{grid-template-columns:1fr 1fr}
-  .focus__grid>:last-child{grid-column:1/-1}
-  .focus__grid>:last-child .frame{aspect-ratio:16/7}
 }
 @media (max-width:760px){
   .mv,.next,.svc-grid,.help,.related,.channels,.enquiry{grid-template-columns:1fr}
@@ -686,8 +684,6 @@ html.lenis,html.lenis body{height:auto}
   .phero{margin:8px;border-radius:22px;padding-top:110px}
   .quote-band{margin-inline:8px}
   .focus__grid{grid-template-columns:1fr}
-  .focus__grid>:last-child{grid-column:auto}
-  .focus__grid>:last-child .frame{aspect-ratio:16/9}
 }
 
 /* ---------- small-screen refinements ---------- */
