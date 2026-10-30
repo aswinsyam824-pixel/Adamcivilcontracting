@@ -726,6 +726,8 @@ html.lenis,html.lenis body{height:auto}
   .mmenu{padding-inline:20px}
   .mmenu nav{margin-top:24px}
   .mmenu .sub{display:block;border:0;scroll-margin-top:0}
+  .mmenu .sub li{padding:0;background:none}
+  .mmenu .sub a{color:rgba(255,255,255,.88);font-size:.92rem}
   .phero{min-height:clamp(480px,70svh,600px);padding:104px 20px 44px}
   .phero h1,.phero--long h1{font-size:clamp(1.8rem,8vw,2.8rem);line-height:.96;text-wrap:balance}
   .phero__lede{font-size:.92rem}
