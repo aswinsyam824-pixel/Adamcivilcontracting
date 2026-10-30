@@ -214,6 +214,33 @@ main>.section:last-child{padding-bottom:0}
 .acc__img svg{width:100%;height:100%}
 .acc__link{font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--red-ink);text-underline-offset:4px;align-self:flex-start;min-height:44px;display:inline-flex;align-items:center}
 
+/* core focus cards */
+.focus{background:var(--ink);color:#fff;border-radius:28px;margin:12px;padding:clamp(48px,6vw,80px) 0}
+.focus .eyebrow{color:#fff}
+.focus .eyebrow .n{color:#B9BCC1}
+.focus .h2 .soft{color:#9EA2A8}
+.focus__head{display:grid;grid-template-columns:1fr 2.4fr;gap:clamp(24px,4vw,64px);align-items:start}
+.focus__head .lead{color:rgba(255,255,255,.75);margin-top:18px}
+.focus__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,20px);margin-top:clamp(28px,4vw,44px)}
+.fcase{position:relative;display:flex;flex-direction:column;background:#26282C;border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;transition:transform .3s,border-color .3s}
+.fcase:hover{transform:translateY(-4px);border-color:rgba(215,79,68,.6)}
+.fcase .frame{aspect-ratio:16/9;overflow:hidden}
+.fcase .frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.fcase:hover .frame img{transform:scale(1.05)}
+.fcase__body{display:flex;flex-direction:column;gap:10px;padding:clamp(18px,1.8vw,24px);flex:1}
+.fcase__top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.fcase__n{font-family:var(--display);font-weight:700;color:var(--red);font-size:.9rem}
+.fcase__tag{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(215,79,68,.16);color:#F3B0A9}
+.fcase h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(1.15rem,1.45vw,1.4rem);line-height:1.1;margin:0}
+.fcase h3 a{text-decoration:none;color:#fff}
+.fcase h3 a::after{content:"";position:absolute;inset:0}
+.fcase p{margin:0;color:rgba(255,255,255,.72);font-size:.86rem;line-height:1.5}
+.fcase ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.fcase li{font-size:.74rem;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.88)}
+.fcase__go{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:.92rem;color:#fff}
+.fcase__go .round{width:40px;height:40px;background:#fff;color:var(--ink);border:0}
+.fcase:hover .fcase__go .round{background:var(--red-ink);color:#fff}
+
 /* feature banner (reference "Jungle villa") */
 .feature{position:relative;margin:0 12px;border-radius:28px;overflow:hidden;min-height:min(640px,82vh);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,3vw,30px);isolation:isolate}
 .feature__art{position:absolute;inset:0;z-index:-1}
@@ -372,6 +399,8 @@ main>.section:last-child{padding-bottom:0}
   .step-card{min-height:0}
   .portrait .frame{min-height:0;height:auto;aspect-ratio:4/3}
   .footer__grid{grid-template-columns:1fr}
+  .focus{margin:8px;border-radius:22px}
+  .focus__head{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   .hero{margin:8px 8px 0;border-radius:22px;min-height:max(560px,calc(100svh - 8px))}
@@ -547,6 +576,9 @@ html.lenis,html.lenis body{height:auto}
   .toc{position:static}
   .sub{grid-template-columns:1fr}
   .sub .frame{max-width:420px}
+  .focus__grid{grid-template-columns:1fr 1fr}
+  .focus__grid>:last-child{grid-column:1/-1}
+  .focus__grid>:last-child .frame{aspect-ratio:16/7}
 }
 @media (max-width:760px){
   .mv,.next,.svc-grid,.help,.related,.channels,.enquiry{grid-template-columns:1fr}
@@ -554,6 +586,9 @@ html.lenis,html.lenis body{height:auto}
   .picker{grid-template-columns:1fr}
   .phero{margin:8px;border-radius:22px;padding-top:110px}
   .quote-band{margin-inline:8px}
+  .focus__grid{grid-template-columns:1fr}
+  .focus__grid>:last-child{grid-column:auto}
+  .focus__grid>:last-child .frame{aspect-ratio:16/9}
 }
 
 /* ---------- small-screen refinements ---------- */
