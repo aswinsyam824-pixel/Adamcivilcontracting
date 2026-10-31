@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Projects | Adam Admin</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body data-page="projects">
+<div class="mtop"><img src="../assets/img/logo.svg" alt="Adam Civil Contracting"><button class="icon-btn" id="menuToggle" aria-expanded="false" aria-controls="side"><span class="sr-only">Menu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button></div>
+<div class="app">
+  <aside class="side" id="side" aria-label="Admin navigation">
+    <a class="side__brand" href="index.html"><img src="../assets/img/logo.svg" alt=""><span><b>ADAM</b><small>Admin panel</small></span></a>
+    <nav aria-label="Admin">
+      <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a class="nav" href="projects.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Projects<span class="count" id="navCount"></span></a>
+      <a class="nav" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a>
+      <p class="side__label">Website</p>
+      <a class="nav" href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>View website</a>
+    </nav>
+    <div class="side__user"><span class="avatar js-avatar" aria-hidden="true"></span><span class="js-user"></span>
+      <button class="icon-btn" type="button" data-logout title="Sign out"><span class="sr-only">Sign out</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/></svg></button></div>
+  </aside>
+  <div class="main">
+    <main class="content" id="main"><div class="ph"><div><h1>Projects</h1><p id="count">Loading…</p></div>
+  <div class="ph__actions"><a class="btn btn--dark" href="edit.html">+ Add project</a></div></div>
+<div class="toolbar">
+  <div id="statusChips" style="display:flex;gap:8px" role="group" aria-label="Filter by status">
+    <button class="chip" data-status="all" aria-pressed="true">All</button>
+    <button class="chip" data-status="live" aria-pressed="false">Published</button>
+    <button class="chip" data-status="draft" aria-pressed="false">Drafts</button></div>
+  <span class="toolbar__sep" aria-hidden="true"></span>
+  <div id="catChips" style="display:flex;gap:8px;flex-wrap:wrap" role="group" aria-label="Filter by service"></div>
+  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span class="sr-only">Search projects</span><input type="search" id="q" placeholder="Search projects"></label>
+</div>
+<p style="color:var(--muted);font-size:13px;margin:-8px 0 18px">The order here is the order on the website. The first 3 published projects appear on the Home page. Use ⋯ to move a project.</p>
+<div class="grid" id="grid"><div class="loading">Loading…</div></div></main>
+    
+  </div>
+</div>
+<script src="assets/admin.js" defer></script>
+</body>
+</html>

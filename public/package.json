@@ -1,0 +1,9 @@
+{
+  "name": "adam-civil-contracting-website",
+  "private": true,
+  "description": "Adam Civil Contracting website + projects admin panel (Vercel)",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@vercel/blob": "1.1.0"
+  }
+}

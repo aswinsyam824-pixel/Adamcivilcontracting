@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Edit project | Adam Admin</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body data-page="edit">
+<div class="mtop"><img src="../assets/img/logo.svg" alt="Adam Civil Contracting"><button class="icon-btn" id="menuToggle" aria-expanded="false" aria-controls="side"><span class="sr-only">Menu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button></div>
+<div class="app">
+  <aside class="side" id="side" aria-label="Admin navigation">
+    <a class="side__brand" href="index.html"><img src="../assets/img/logo.svg" alt=""><span><b>ADAM</b><small>Admin panel</small></span></a>
+    <nav aria-label="Admin">
+      <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a class="nav" href="projects.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Projects<span class="count" id="navCount"></span></a>
+      <a class="nav" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a>
+      <p class="side__label">Website</p>
+      <a class="nav" href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>View website</a>
+    </nav>
+    <div class="side__user"><span class="avatar js-avatar" aria-hidden="true"></span><span class="js-user"></span>
+      <button class="icon-btn" type="button" data-logout title="Sign out"><span class="sr-only">Sign out</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/></svg></button></div>
+  </aside>
+  <div class="main">
+    <main class="content" id="main"><a class="back" href="projects.html">← All projects</a>
+<div class="ph"><div><h1 id="pageTitle">Add project</h1><p>Fields marked <span style="color:var(--red-ink)">*</span> are required. Press Ctrl/⌘ + S to save.</p></div>
+  <div class="ph__actions"><a class="btn" id="viewLink" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>View on website</a><button class="btn btn--dark" type="button" data-save>Save project</button></div></div>
+<div class="form-grid">
+  <div>
+    <section class="card" aria-labelledby="c1"><h2 id="c1">Project details</h2><p class="hint">Shown on the project card and at the top of the project page.</p>
+      <div class="fields">
+        <div class="f f--full"><label for="fTitle">Project name <em>*</em></label><input type="text" id="fTitle" maxlength="120" placeholder="e.g. Business Bay Corporate Office Fit-Out" required></div>
+        <div class="f"><label for="fType">Type of work</label><input type="text" id="fType" maxlength="80" placeholder="e.g. Office fit-out"></div>
+        <div class="f"><label for="fCat">Service category</label><input type="text" id="fCat" list="catList" maxlength="40" placeholder="Fit-Out, MEP, AMC…"><datalist id="catList"></datalist><small>Used for the filter buttons on the website.</small></div>
+        <div class="f"><label for="fLoc">Location</label><input type="text" id="fLoc" maxlength="80" placeholder="e.g. Business Bay, Dubai"></div>
+        <div class="f"><label for="fYear">Year</label><input type="text" id="fYear" maxlength="9" inputmode="numeric" placeholder="2026"></div>
+        <div class="f f--full"><span class="lbl" id="stLbl">Status</span><div class="seg" id="fStatus" role="group" aria-labelledby="stLbl"><button type="button" data-v="Completed">Completed</button><button type="button" data-v="Ongoing">Ongoing</button></div></div>
+      </div></section>
+    <section class="card" aria-labelledby="c2"><h2 id="c2">Description</h2><p class="hint">Tell visitors what the project was and what you did.</p>
+      <div class="fields">
+        <div class="f f--full"><label for="fSummary">Short summary</label><textarea id="fSummary" maxlength="300" rows="3" placeholder="One or two sentences for the card and banner."></textarea><small><span>Shown on the project banner.</span><span id="sumCount"></span></small></div>
+        <div class="f f--full"><label for="fAbout">About the project</label><textarea id="fAbout" rows="7" placeholder="Describe the project. Leave an empty line to start a new paragraph."></textarea><small>Leave an empty line between paragraphs.</small></div>
+        <div class="f f--full"><label for="scopeIn">Scope of works</label><div class="tags" id="scopeTags"><input type="text" id="scopeIn" placeholder="Type an item and press Enter"></div><small>e.g. Partitions, HVAC works, Authority approvals</small></div>
+      </div></section>
+    <section class="card" aria-labelledby="c3"><h2 id="c3">Images <span id="imgCount" style="font-weight:400;color:var(--muted);font-size:13px"></span></h2>
+      <p class="hint">JPG, PNG or WebP. Large photos are resized automatically. Drag images to reorder. The cover is used on the project card.</p>
+      <div class="drop" id="drop" role="button" tabindex="0" aria-label="Upload images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg><b>Click to upload</b> or drag images here</div>
+      <input type="file" id="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+      <ul class="thumbs" id="thumbs"></ul></section>
+  </div>
+  <div class="sticky">
+    <section class="card" aria-labelledby="c4"><h2 id="c4" style="margin-bottom:14px">Publishing</h2>
+      <div class="row"><div><b>Show on website</b><span>Off = saved as a draft</span></div><label class="switch"><input type="checkbox" id="fPub"><span class="track"></span><span class="sr-only">Show on website</span></label></div>
+      <div class="row"><div><b>Sample project</b><span>Shows a “Sample project” label</span></div><label class="switch"><input type="checkbox" id="fSample"><span class="track"></span><span class="sr-only">Sample project</span></label></div>
+      <button class="btn btn--dark btn--block" type="button" data-save style="margin-top:6px">Save project</button>
+      <div class="preview"><p class="lbl">Card preview</p><div class="pv" id="pv"></div></div></section>
+    <section class="card" id="deleteCard" hidden aria-labelledby="c5"><h2 id="c5">Delete project</h2><p class="hint">Removes the project and its uploaded images from the website.</p>
+      <button class="btn btn--danger btn--block" type="button" id="deleteBtn">Delete project</button></section>
+  </div>
+</div></main>
+    
+  </div>
+</div>
+<script src="assets/admin.js" defer></script>
+</body>
+</html>

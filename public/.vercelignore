@@ -1,0 +1,6 @@
+tools
+.localdata
+uploads
+node_modules
+*.md
+!README.md

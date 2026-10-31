@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sign in | Adam Admin</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body data-page="login">
+<div class="auth">
+  <div class="auth__brand"><img src="../assets/img/logo.svg" alt="Adam Civil Contracting">
+    <div><h1>Projects<span>admin panel</span></h1><p>Add, edit and publish the projects shown on the Adam Civil Contracting website.</p></div></div>
+  <main class="auth__form" id="main"><div class="auth__box">
+    <h2 id="authTitle">Sign in</h2><p id="authSub">Manage the projects shown on the website.</p>
+    <form id="loginForm" novalidate>
+      <div class="f"><label for="lUser">Username</label><input type="text" id="lUser" autocomplete="username" required></div>
+      <div class="f"><label for="lPass">Password</label><input type="password" id="lPass" autocomplete="current-password" required></div>
+      <button class="btn btn--dark btn--block" type="submit">Sign in</button>
+    </form>
+    <p class="err" id="err" role="alert"></p>
+    <p style="margin-top:22px;font-size:13px"><a href="../" style="color:var(--muted)">← Back to website</a></p>
+  </div></main>
+</div>
+<script src="assets/admin.js" defer></script>
+</body>
+</html>

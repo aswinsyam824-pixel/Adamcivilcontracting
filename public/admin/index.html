@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dashboard | Adam Admin</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body data-page="dashboard">
+<div class="mtop"><img src="../assets/img/logo.svg" alt="Adam Civil Contracting"><button class="icon-btn" id="menuToggle" aria-expanded="false" aria-controls="side"><span class="sr-only">Menu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button></div>
+<div class="app">
+  <aside class="side" id="side" aria-label="Admin navigation">
+    <a class="side__brand" href="index.html"><img src="../assets/img/logo.svg" alt=""><span><b>ADAM</b><small>Admin panel</small></span></a>
+    <nav aria-label="Admin">
+      <a class="nav" href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a class="nav" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Projects<span class="count" id="navCount"></span></a>
+      <a class="nav" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a>
+      <p class="side__label">Website</p>
+      <a class="nav" href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>View website</a>
+    </nav>
+    <div class="side__user"><span class="avatar js-avatar" aria-hidden="true"></span><span class="js-user"></span>
+      <button class="icon-btn" type="button" data-logout title="Sign out"><span class="sr-only">Sign out</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/></svg></button></div>
+  </aside>
+  <div class="main main--aside">
+    <main class="content" id="main"><div class="ph"><div><h1>Dashboard</h1><p id="hello"></p></div>
+  <div class="ph__actions"><a class="btn" href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>View website</a><a class="btn btn--dark" href="edit.html">+ Add project</a></div></div>
+<div class="an-head"><h2>Website analytics</h2>
+  <div class="seg" id="range" role="group" aria-label="Date range"><button type="button" data-r="7">7 days</button><button type="button" data-r="30" aria-pressed="true">30 days</button><button type="button" data-r="90">90 days</button></div></div>
+<dl class="stats" id="kpis"><div class="loading" style="grid-column:1/-1">Loading analytics…</div></dl>
+<section class="card chart-card" aria-labelledby="ch-h">
+  <div class="section-h" style="margin-bottom:6px"><h2 id="ch-h">Visitors per day</h2>
+    <div class="ch-legend"><span><i style="background:#D9D6D1"></i>Page views</span><span><i style="background:#3F7A5E"></i>Visitors</span><span><i style="background:#D74F44;border-radius:50%"></i>Enquiry actions</span></div></div>
+  <div class="chart" id="chart"></div><div class="tip" id="tip" hidden></div>
+</section>
+<div class="an-grid">
+  <section class="card" aria-labelledby="eq-h"><div class="section-h"><h2 id="eq-h">Enquiry actions</h2><span class="muted-s">clicks on contact buttons</span></div><ul class="hbars" id="enq"></ul></section>
+  <section class="card" aria-labelledby="tp-h"><div class="section-h"><h2 id="tp-h">Top pages</h2><span class="muted-s">views</span></div><ul class="hbars" id="pages"></ul></section>
+  <section class="card" aria-labelledby="pj-h"><div class="section-h"><h2 id="pj-h">Most viewed projects</h2><span class="muted-s">views</span></div><ul class="hbars" id="pviews"></ul></section>
+  <section class="card" aria-labelledby="rf-h"><div class="section-h"><h2 id="rf-h">Traffic sources</h2><span class="muted-s">visits</span></div><ul class="hbars" id="refs"></ul>
+    <div class="devs" id="devs"></div></section>
+</div>
+<div class="dash-row">
+  <section class="card site-card" aria-labelledby="sd-h">
+    <div class="section-h" style="margin-bottom:12px"><h2 id="sd-h">Website details</h2><a class="btn btn--sm" href="settings.html">Edit</a></div>
+    <div class="site-card__body"><div class="logo-box logo-box--dark" id="dLogo"></div>
+      <dl class="kv" id="dSite"><div><dt>Phone</dt><dd class="none">Loading…</dd></div></dl></div>
+  </section>
+  <section class="card" aria-labelledby="qa-h">
+    <div class="section-h" style="margin-bottom:12px"><h2 id="qa-h">Quick actions</h2></div>
+    <div class="qa">
+      <a href="edit.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span><b>Add project</b><small>Publish new work</small></span></a>
+      <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span><b>Manage projects</b><small>Edit, order, hide</small></span></a>
+      <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span><b>Contact &amp; logo</b><small>Phone, email, address</small></span></a>
+      <a href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span><b>View website</b><small>Opens in a new tab</small></span></a>
+    </div>
+  </section>
+</div>
+<div class="section-h"><h2>Recently updated projects</h2><a href="projects.html">View all projects →</a></div>
+<div class="grid" id="recent"><div class="loading" style="grid-column:1/-1">Loading projects…</div></div></main>
+    <aside class="aside" aria-label="Summary"><section class="w"><h3>Projects</h3><dl class="pstats" id="pstats"></dl></section>
+<section class="w"><h3>Live on website</h3><div class="gauge" id="gauge"></div><div class="gauge-legend" id="gaugeLegend"></div></section>
+<section class="w"><h3>Projects by service</h3><div class="bar" id="catBar"></div><ul class="legend" id="catLegend"></ul></section>
+<section class="w"><h3>Overview</h3><div class="ov" id="overview"></div></section>
+<section class="w"><h3>Home page shows <span>first 3</span></h3><ul class="mini" id="homeList"></ul></section></aside>
+  </div>
+</div>
+<script src="assets/admin.js" defer></script>
+</body>
+</html>
