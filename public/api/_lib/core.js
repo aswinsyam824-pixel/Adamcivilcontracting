@@ -7,7 +7,10 @@ const path = require("path");
 
 const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
 const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
-const BLOB = !!process.env.BLOB_READ_WRITE_TOKEN;
+/* Blob key: the standard name, or any variable holding a Vercel Blob read-write token (custom prefixes) */
+const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN ||
+  Object.values(process.env).find(v => typeof v === "string" && /^vercel_blob_rw_/.test(v)) || "";
+const BLOB = !!BLOB_TOKEN;
 const LOCAL_DIR = path.join(process.cwd(), ".localdata");
 const KEY_PROJECTS = "acc:projects";
 const LOCK_AFTER = 5, LOCK_SECONDS = 15 * 60;
@@ -86,9 +89,21 @@ async function clearFails(ip) {
 async function saveImage(buf, ext, folder = "projects") {
   const name = `${new Date().toISOString().slice(0, 10).replace(/-/g, "")}-${crypto.randomBytes(8).toString("hex")}.${ext}`;
   if (BLOB) {
-    const { put } = require("@vercel/blob");
-    const r = await put(`${folder}/${name}`, buf, { access: "public", addRandomSuffix: true, contentType: ext === "png" ? "image/png" : ext === "webp" ? "image/webp" : "image/jpeg" });
-    return r.url;
+    let put;
+    try { ({ put } = require("@vercel/blob")); }
+    catch (e) { throw Object.assign(new Error("Photo storage library is missing. Make sure package.json (with @vercel/blob) is in the same folder as the api folder, then redeploy."), { status: 500 }); }
+    try {
+      const r = await put(`${folder}/${name}`, buf, { token: BLOB_TOKEN, access: "public", addRandomSuffix: true, contentType: ext === "png" ? "image/png" : ext === "webp" ? "image/webp" : "image/jpeg" });
+      return r.url;
+    } catch (e) {
+      console.error("blob put", e);
+      const msg = /private/i.test(e.message) ? "Your Blob store is set to Private. Create a Blob store with Public access and connect it to this project, then redeploy."
+        : "Photo storage error: " + e.message;
+      throw Object.assign(new Error(msg), { status: 502 });
+    }
+  }
+  if (process.env.VERCEL) {   // Vercel's disk is read-only: photos must go to Blob
+    throw Object.assign(new Error("Photo storage is not connected. In Vercel open Storage → Blob → connect your Blob store to this project (Production), then redeploy."), { status: 503 });
   }
   const dir = path.join(process.cwd(), "uploads", folder); fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, name), buf); return `uploads/${folder}/` + name;
@@ -96,7 +111,7 @@ async function saveImage(buf, ext, folder = "projects") {
 const isBlobUrl = p => /^https:\/\/[a-z0-9]+\.public\.blob\.vercel-storage\.com\/(projects|site)\/[\w.\-]+$/i.test(p);
 async function deleteImages(paths) {
   const blobs = paths.filter(isBlobUrl), local = paths.filter(p => /^uploads\/(projects|site)\/[\w.\-]+$/.test(p));
-  if (blobs.length && BLOB) { try { const { del } = require("@vercel/blob"); await del(blobs); } catch (e) { console.error("blob delete", e); } }
+  if (blobs.length && BLOB) { try { const { del } = require("@vercel/blob"); await del(blobs, { token: BLOB_TOKEN }); } catch (e) { console.error("blob delete", e); } }
   local.forEach(p => { try { fs.unlinkSync(path.join(process.cwd(), p)); } catch (e) {} });
 }
 const validImage = p => typeof p === "string" && p.length < 400 && !p.includes("..") &&
